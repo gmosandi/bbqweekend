@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBQ Weekend - Gallos Tasting Demonstration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .smoke-effect {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: -20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .fire-emoji {
+            font-size: 2em;
+        }
+        
+        .main-title {
+            color: #d35400;
+            margin: 5px 0;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin: 5px 0 15px;
+        }
+        
+        .countdown-timer {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .cuts-section {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .cuts-title {
+            color: #d35400;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .cut-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .cut-emoji {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+        
+        .cut-content {
+            flex: 1;
+        }
+        
+        .cut-text {
+            font-weight: bold;
+            display: block;
+        }
+        
+        .cut-method {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .cta-button:hover {
+            background-color: #2ecc71;
+        }
+        
+        .whatsapp-info {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-icon {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        
+        .whatsapp-text {
+            text-align: left;
+        }
+        
+        .details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .hashtags {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.8em;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        
+        .hashtags:hover {
+            background-color: #2c3e50;
+        }
+        
+        .language-selector {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        
+        .language-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .language-btn.active {
+            background-color: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <button class="language-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="language-btn" onclick="setLanguage('es')">ES</button>
+    </div>
+
+    <div id="content-en">
+        <div class="smoke-effect">💨</div>
+
+        <div class="header">
+            <div class="fire-emoji">🔥</div>
+            <h1 class="main-title">BBQ Weekend</h1>
+            <h2 class="subtitle">Gallos Tasting Demonstration</h2>
+        </div>
+
+        <div class="countdown-timer" id="countdown">⏳ <span id="timer"></span> left to reserve!</div>
+
+        <div class="cuts-section">
+            <h3 class="cuts-title">Premium Cuts on Pit Boss Combo Grill</h3>
+
+            <div class="cut-item">
+                <span class="cut-emoji">🍖</span>
+                <div class="cut-content">
+                    <span class="cut-text">Smoked Baby Ribs</span>
+                    <span class="cut-method">100% Hardwood Pellet Smoking | 180°F Low & Slow</span>
+                </div>
+            </div>
+
+            <div class="cut-item">
+                <span class="cut-emoji">🥩</span>
+                <div class="cut-content">
+                    <span class="cut-text">Grilled Picanha</span>
+                    <span class="cut-method">Smoke-to-Sear Combo | Pellet Smoke + Gas Grill Finish</span>
+                </div>
+            </div>
+
+            <div class="cut-item">
+                <span class="cut-emoji">🪓</span>
+                <div class="cut-content">
+                    <span class="cut-text">Tomahawk Steaks</span>
+                    <span class="cut-method">Reverse Sear Method | Wood Smoke + 30K BTU Gas Sear</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <button class="cta-button" onclick="openWhatsApp()">Order via WhatsApp! 📱</button>
+            <div class="whatsapp-info">
+                <div class="whatsapp-icon">💬</div>
+                <div class="whatsapp-text">
+                    <strong>Easy Ordering Process:</strong><br>
+                    Message us on WhatsApp to reserve your cuts!
+                </div>
+            </div>
+
+            <div class="details">
+                🗓️ This Weekend Only<br>
+                🔥 Pit Boss Combo Grill Demo<br>
+                👨‍🍳 Learn Smoke-to-Sear Techniques<br>
+                � 8-in-1 Cooking Versatility Showcase
+            </div>
+        </div>
+
+        <div class="hashtags" onclick="copyHashtags()">
+            📋 #BBQWeekend #PitBossCombo #GallosTasting #SmokeToSear #ReverseSear #ComboGrill #HardwoodPellets #30KBTU #BBQDemo
+        </div>
+    </div>
+
+    <!-- Spanish Content -->
+    <div id="content-es" style="display: none;">
+        <div class="smoke-effect">💨</div>
+
+        <div class="header">
+            <div class="fire-emoji">🔥</div>
+            <h1 class="main-title">Fin de Semana BBQ</h1>
+            <h2 class="subtitle">Demostración de Gallos</h2>
+        </div>
+
+        <div class="countdown-timer" id="countdown-es">⏳ <span id="timer-es"></span> para reservar!</div>
+
+        <div class="cuts-section">
+            <h3 class="cuts-title">Cortes Premium en la Parrilla Pit Boss Combo</h3>
+
+            <div class="cut-item">
+                <span class="cut-emoji">🍖</span>
+                <div class="cut-content">
+                    <span class="cut-text">Costillas Ahumadas</span>
+                    <span class="cut-method">Ahumado con Pellets de Madera | 180°F Bajo y Lento</span>
+                </div>
+            </div>
+
+            <div class="cut-item">
+                <span class="cut-emoji">🥩</span>
+                <div class="cut-content">
+                    <span class="cut-text">Picanha a la Parrilla</span>
+                    <span class="cut-method">Combinación Ahumado y Sellado | Ahumado con Pellets + Terminado en Parrilla de Gas</span>
+                </div>
+            </div>
+
+            <div class="cut-item">
+                <span class="cut-emoji">🪓</span>
+                <div class="cut-content">
+                    <span class="cut-text">Steaks Tomahawk</span>
+                    <span class="cut-method">Método Reverse Sear | Ahumado con Madera + Sellado con Gas de 30K BTU</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <button class="cta-button" onclick="openWhatsApp()">¡Ordenar por WhatsApp! 📱</button>
+            <div class="whatsapp-info">
+                <div class="whatsapp-icon">💬</div>
+                <div class="whatsapp-text">
+                    <strong>Proceso Fácil de Pedir:</strong><br>
+                    ¡Mándanos un mensaje en WhatsApp para reservar tus cortes!
+                </div>
+            </div>
+
+            <div class="details">
+                🗓️ ¡Solo este fin de semana!<br>
+                🔥 Demostración en la Parrilla Pit Boss Combo<br>
+                👨‍🍳 Técnicas de Ahumado y Sellado<br>
+                🍽️ Exhibición de Versatilidad 8 en 1
+            </div>
+        </div>
+
+        <div class="hashtags" onclick="copyHashtags()">
+            📋 #BBQWeekend #PitBossCombo #GallosTasting #SmokeToSear #ReverseSear #ComboGrill #HardwoodPellets #30KBTU #BBQDemo
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            // Update button styles
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide content
+            if (lang === 'en') {
+                document.getElementById("content-en").style.display = 'block';
+                document.getElementById("content-es").style.display = 'none';
+            } else {
+                document.getElementById("content-en").style.display = 'none';
+                document.getElementById("content-es").style.display = 'block';
+            }
+        }
+
+        function openWhatsApp() {
+            const isEnglish = document.getElementById("content-en").style.display !== 'none';
+            
+            const message = isEnglish 
+                ? encodeURIComponent(
+                    "🔥 BBQ Weekend - Gallos Tasting Order 🔥\n\n" +
+                    "Hi! I'd like to order for the BBQ Weekend demonstration:\n\n" +
+                    "🍖 Smoked Baby Ribs (Hardwood Pellet Smoking)\n" +
+                    "🥩 Grilled Picanha (Smoke-to-Sear Combo)\n" +
+                    "🪓 Tomahawk Steaks (Reverse Sear Method)\n\n" +
+                    "Please let me know availability and pricing!\n\n" +
+                    "#PitBossCombo #BBQWeekend"
+                  )
+                : encodeURIComponent(
+                    "🔥 Fin de Semana BBQ - Pedido de Gallos Tasting 🔥\n\n" +
+                    "¡Hola! Me gustaría ordenar para la demostración del Fin de Semana BBQ:\n\n" +
+                    "🍖 Costillas Ahumadas (Ahumado con Pellets de Madera)\n" +
+                    "🥩 Picanha a la Parrilla (Combinación Ahumado y Sellado)\n" +
+                    "🪓 Steaks Tomahawk (Método Reverse Sear)\n\n" +
+                    "¡Por favor déjame saber disponibilidad y precios!\n\n" +
+                    "#PitBossCombo #BBQWeekend"
+                  );
+            
+            const phoneNumber = "50670122056";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function copyHashtags() {
+            const tags = "#BBQWeekend #PitBossCombo #GallosTasting #SmokeToSear #ReverseSear #ComboGrill #HardwoodPellets #30KBTU #BBQDemo";
+            navigator.clipboard.writeText(tags).then(() => {
+                const isEnglish = document.getElementById("content-en").style.display !== 'none';
+                alert(isEnglish ? "🔥 Hashtags copied to clipboard!" : "🔥 ¡Hashtags copiados al portapapeles!");
+            });
+        }
+
+        function updateCountdown() {
+            const eventDate = new Date("2025-08-02T23:59:59");
+            const now = new Date();
+            const diff = eventDate - now;
+
+            const isEnglish = document.getElementById("content-en").style.display !== 'none';
+            const timerEn = document.getElementById("timer");
+            const timerEs = document.getElementById("timer-es");
+
+            if (diff <= 0) {
+                timerEn.textContent = isEnglish ? "Event is live!" : "¡El evento está en vivo!";
+                if (timerEs) timerEs.textContent = "¡El evento está en vivo!";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            timerEn.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            if (timerEs) timerEs.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
